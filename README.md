@@ -2,6 +2,10 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This portfolio showcases my work as an AI/ML student and developer, featuring a clean design with smooth animations and interactive elements.
 
+# Deployment
+
+https://portfolio-z63e.onrender.com
+
 ## 🚀 Features
 
 - 🌓 Dark/Light mode toggle
