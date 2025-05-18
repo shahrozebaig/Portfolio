@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Download } from 'lucide-react';
 
 interface AboutProps {
   darkMode: boolean;
@@ -120,6 +121,21 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
                 <p className="text-xl font-bold text-pink-500">2+</p>
                 <p className="text-sm">Certifications</p>
               </div>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="mt-8">
+              <a
+                href="/Shahroze_Resume.pdf"
+                download="Shahroze_Baig_Resume.pdf"
+                className={`inline-flex items-center px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  darkMode 
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg hover:shadow-indigo-500/20' 
+                    : 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-lg hover:shadow-indigo-500/20'
+                }`}
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download Resume
+              </a>
             </motion.div>
           </div>
         </motion.div>
