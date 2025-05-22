@@ -83,13 +83,13 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
           
           <div>
             <motion.div variants={itemVariants} className="mb-6">
-              <h2 className="text-sm uppercase tracking-wider text-indigo-500 font-semibold mb-2">
+              <h2 className="text-sm uppercase tracking-wider font-semibold mb-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 About Me
               </h2>
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 AI/ML Student & Developer
               </h3>
-              <div className={`w-20 h-1 ${darkMode ? 'bg-indigo-400' : 'bg-indigo-600'}`}></div>
+              <div className={`w-20 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500`}></div>
             </motion.div>
             
             <motion.p variants={itemVariants} className="text-lg mb-6 leading-relaxed">
