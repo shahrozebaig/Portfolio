@@ -65,19 +65,19 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
 
   const contactItems = [
     {
-      icon: <Mail className="w-5 h-5" />,
+      icon: <Mail className="w-6 h-6" />,
       title: 'Email',
       value: 'shahrozeb98@gmail.com',
       href: 'mailto:shahrozeb98@gmail.com',
     },
     {
-      icon: <Phone className="w-5 h-5" />,
+      icon: <Phone className="w-6 h-6" />,
       title: 'Phone',
       value: '+91 9392713232',
       href: 'tel:+919392713232',
     },
     {
-      icon: <MapPin className="w-5 h-5" />,
+      icon: <MapPin className="w-6 h-6" />,
       title: 'Location',
       value: 'Hyderabad, India',
       href: '#',
@@ -86,12 +86,12 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
 
   const socialLinks = [
     {
-      icon: <Linkedin className="w-5 h-5" />,
+      icon: <Linkedin className="w-6 h-6" />,
       href: 'https://www.linkedin.com/in/shahroze-baig-692264290',
       label: 'LinkedIn',
     },
     {
-      icon: <Instagram className="w-5 h-5" />,
+      icon: <Instagram className="w-6 h-6" />,
       href: 'https://www.instagram.com/shahrozebaig18/',
       label: 'Instagram',
     },
@@ -112,13 +112,13 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
           animate={inView ? 'visible' : 'hidden'}
           className="text-center mb-16"
         >
-          <motion.h2 variants={itemVariants} className="text-sm uppercase tracking-wider text-indigo-500 font-semibold mb-2">
+          <motion.h2 variants={itemVariants} className="text-sm uppercase tracking-wider font-semibold mb-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Get In Touch
           </motion.h2>
-          <motion.h3 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-6">
+          <motion.h3 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Contact Me
           </motion.h3>
-          <motion.div variants={itemVariants} className="w-20 h-1 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 mb-8"></motion.div>
+          <motion.div variants={itemVariants} className="w-20 h-1 mx-auto bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-8"></motion.div>
           <motion.p variants={itemVariants} className="max-w-2xl mx-auto text-lg">
             Have a project in mind or want to discuss potential collaborations? 
             Feel free to reach out through the contact form or using the information below.
@@ -131,7 +131,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
           >
-            <motion.h4 variants={itemVariants} className="text-2xl font-bold mb-6">
+            <motion.h4 variants={itemVariants} className="text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Send Me a Message
             </motion.h4>
             
@@ -238,7 +238,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
           >
-            <motion.h4 variants={itemVariants} className="text-2xl font-bold mb-6">
+            <motion.h4 variants={itemVariants} className="text-2xl font-bold mb-6 bg-gradient-to-r from-emerald-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Contact Information
             </motion.h4>
             
@@ -248,27 +248,69 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                   key={index}
                   href={item.href}
                   variants={itemVariants}
-                  className={`flex items-start space-x-4 p-4 rounded-lg transition-all duration-300 ${
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: darkMode 
+                      ? "0 0 20px rgba(99, 102, 241, 0.3)" 
+                      : "0 0 20px rgba(79, 70, 229, 0.2)"
+                  }}
+                  className={`relative flex items-start space-x-4 p-4 rounded-lg transition-all duration-300 group ${
                     darkMode 
-                      ? 'hover:bg-gray-700' 
-                      : 'hover:bg-gray-50'
+                      ? 'hover:bg-gray-700/50' 
+                      : 'hover:bg-gray-50/50'
                   }`}
                 >
-                  <div className="p-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
-                    {item.icon}
+                  {/* Glow effect */}
+                  <div className={`absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    darkMode 
+                      ? 'bg-gradient-to-r from-indigo-500/10 to-purple-500/10' 
+                      : 'bg-gradient-to-r from-indigo-500/5 to-purple-500/5'
+                  } blur-sm`} />
+                  
+                  {/* Icon container with glow */}
+                  <div className="relative p-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white group-hover:shadow-lg group-hover:shadow-indigo-500/20 transition-all duration-300">
+                    <div className={`absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                      darkMode 
+                        ? 'bg-indigo-500/20' 
+                        : 'bg-indigo-500/10'
+                    } blur-md`} />
+                    <motion.div
+                      whileHover={{ 
+                        scale: 1.1,
+                        filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.5))"
+                      }}
+                      className="relative z-10"
+                    >
+                      {item.icon}
+                    </motion.div>
                   </div>
-                  <div>
-                    <h5 className="font-medium">{item.title}</h5>
-                    <p className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
+                  
+                  <div className="relative z-10">
+                    <motion.h5 
+                      className="font-medium"
+                      whileHover={{ 
+                        color: darkMode ? "#818CF8" : "#4F46E5"
+                      }}
+                    >
+                      {item.title}
+                    </motion.h5>
+                    <motion.p 
+                      className={darkMode ? 'text-gray-300' : 'text-gray-600'}
+                      whileHover={{ 
+                        color: darkMode ? "#A5B4FC" : "#6366F1"
+                      }}
+                    >
                       {item.value}
-                    </p>
+                    </motion.p>
                   </div>
                 </motion.a>
               ))}
             </motion.div>
             
             <motion.div variants={itemVariants} className="mt-12">
-              <h4 className="text-xl font-bold mb-4">Connect on Social Media</h4>
+              <h4 className="text-xl font-bold mb-4 bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500 bg-clip-text text-transparent">
+                Connect on Social Media
+              </h4>
               <div className="flex space-x-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
@@ -276,14 +318,38 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className={`p-3 rounded-full ${
-                      darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'
-                    } transition-colors duration-300`}
+                    whileHover={{ 
+                      scale: 1.1,
+                      boxShadow: darkMode 
+                        ? "0 0 20px rgba(99, 102, 241, 0.3)" 
+                        : "0 0 20px rgba(79, 70, 229, 0.2)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`relative p-4 rounded-full group transition-all duration-300 ${
+                      darkMode 
+                        ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 hover:from-indigo-500/30 hover:to-purple-500/30' 
+                        : 'bg-gradient-to-r from-indigo-500/10 to-purple-500/10 hover:from-indigo-500/20 hover:to-purple-500/20'
+                    }`}
                     aria-label={link.label}
                   >
-                    {link.icon}
+                    {/* Glow effect */}
+                    <div className={`absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                      darkMode 
+                        ? 'bg-indigo-500/20' 
+                        : 'bg-indigo-500/10'
+                    } blur-md`} />
+                    
+                    <motion.div
+                      whileHover={{ 
+                        scale: 1.1,
+                        filter: "drop-shadow(0 0 8px rgba(99, 102, 241, 0.5))"
+                      }}
+                      className={`relative z-10 ${
+                        darkMode ? 'text-white' : 'text-indigo-600'
+                      }`}
+                    >
+                      {link.icon}
+                    </motion.div>
                   </motion.a>
                 ))}
               </div>
