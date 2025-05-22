@@ -101,13 +101,13 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
           animate={inView ? 'visible' : 'hidden'}
           className="text-center mb-16"
         >
-          <motion.h2 variants={itemVariants} className="text-sm uppercase tracking-wider text-indigo-500 font-semibold mb-2">
+          <motion.h2 variants={itemVariants} className="text-sm uppercase tracking-wider font-semibold mb-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             My Work
           </motion.h2>
-          <motion.h3 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-6">
+          <motion.h3 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Recent Projects
           </motion.h3>
-          <motion.div variants={itemVariants} className="w-20 h-1 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 mb-8"></motion.div>
+          <motion.div variants={itemVariants} className="w-20 h-1 mx-auto bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></motion.div>
           <motion.p variants={itemVariants} className="max-w-2xl mx-auto text-lg">
             Here's a selection of my recent projects showcasing my skills in AI/ML, web development, and automation.
           </motion.p>
