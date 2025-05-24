@@ -34,7 +34,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       description: 'Automates birthday wishes via WhatsApp using a scheduler and user data from a file. Enhances personal or professional communication by ensuring timely, personalized messages.',
       image: 'https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       tags: ['Python', 'Pandas', 'pywhatkit', 'Datetime'],
-      githubUrl: '#',
+      githubUrl: 'https://github.com/shahrozebaig/Whatsapp-Birthday-bot',
       liveUrl: '#',
       category: 'automation',
     },
