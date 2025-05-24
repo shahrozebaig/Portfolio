@@ -54,7 +54,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       description: 'Created a full-stack web app for predicting Alzheimer\'s at an early stage. Doctors can input patient data and receive results powered by machine learning.',
       image: '/Alzheimers-Disease.jpg',
       tags: ['Python', 'MongoDB', 'React JS', 'Machine Learning', 'OpenCV'],
-      githubUrl: '#',
+      githubUrl: 'https://github.com/shahrozebaig/Alzheimer-Detection',
       liveUrl: '#',
       category: 'web',
     }
